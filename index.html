@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Copia mis trades en Binomo, únete a mi comunidad PRIME gratis y aprende a generar ingresos con opciones binarias.">
+  <meta name="keywords" content="opciones binarias, binomo, trading, ganar dinero online, estrategias de trading, comunidad prime trading">
+  <meta name="author" content="Trades Ventures">
+  <meta property="og:title" content="Trades Ventures | Opera Opciones Binarias Conmigo">
+  <meta property="og:description" content="Te enseño mis estrategias en Binomo y te doy acceso a mi comunidad PRIME gratis. Regístrate con mi enlace y empieza hoy.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1612178524032-8509d06b6b6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTk3Mjh8MHwxfHNlYXJjaHwxfHxiaW5hcnklMjBvcHRpb25zJTIwdHJhZGluZyUyMGRhc2hib2FyZHxlbnwwfHx8fDE3MjM3NjE4ODR8MA&ixlib=rb-4.0.3&q=80&w=1080">
+  <meta property="og:url" content="https://your-github-username.github.io/trades-ventures/">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <title>Trades Ventures | Genera Ingresos con Opciones Binarias</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <style>
+    /* ================================================================================
+      STYLESHEET FOR TRADES VENTURES
+    ================================================================================
+    */
+
+    /* 1. FONT IMPORTS & CUSTOM PROPERTIES
+    -------------------------------------------------------------------------------- */
+    :root {
+        --verde-bosque: #2d6a4f;
+        --beige-arena: #f4f1de;
+        --naranja-terracota: #e07a5f;
+        --gris-piedra: #3d405b;
+
+        --font-title: 'Playfair Display', serif;
+        --font-body: 'Source Sans Pro', sans-serif;
+    }
+
+    /* 2. GENERAL BODY & RESET
+    -------------------------------------------------------------------------------- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--font-body);
+        background-color: var(--beige-arena);
+        color: var(--gris-piedra);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    /* 3. HEADER & NAVIGATION
+    -------------------------------------------------------------------------------- */
+    .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background-color: var(--gris-piedra);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        padding: 1rem 0;
+        transition: padding 0.3s ease;
+    }
+
+    .sticky-header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        font-family: var(--font-title);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--beige-arena);
+    }
+
+    .logo-svg {
+        width: 2rem;
+        height: 2rem;
+        color: var(--beige-arena);
+    }
+
+    .main-menu {
+        display: none;
+        list-style: none;
+        gap: 2rem;
+    }
+
+    .nav-link {
+        position: relative;
+        color: var(--beige-arena);
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        padding-bottom: 0.5rem;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--naranja-terracota);
+        transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .nav-link.active {
+        color: white;
+    }
+
+    .nav-link.active::after {
+        width: 100%;
+    }
+    
+    .nav-link:not(.active):hover::after {
+        width: 100%;
+    }
+
+    /* Mobile Menu */
+    .menu-toggle {
+        display: none;
+    }
+
+    .menu-icon {
+        cursor: pointer;
+        color: var(--beige-arena);
+        z-index: 100;
+    }
+    
+    .menu-icon svg {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .menu-toggle:checked ~ .main-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--gris-piedra);
+        padding: 2rem 0;
+        animation: slideDown 0.3s ease-in-out;
+    }
+
+    @media (min-width: 768px) {
+        .main-menu {
+            display: flex;
+        }
+        .menu-icon {
+            display: none;
+        }
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 4. SECTIONS & TITLES
+    -------------------------------------------------------------------------------- */
+    .section-light {
+        padding: 6rem 0;
+        background-color: var(--beige-arena);
+    }
+
+    .section-dark {
+        padding: 6rem 0;
+        background-color: #f0ede2; /* Lighter beige for contrast */
+    }
+
+    .section-title {
+        font-family: var(--font-title);
+        font-size: 2.8rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: var(--gris-piedra);
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 1.125rem;
+        max-width: 600px;
+        margin: 0 auto 4rem auto;
+        color: #6c6f83;
+    }
+
+    /* 5. HERO SECTION
+    -------------------------------------------------------------------------------- */
+    .hero-section {
+        color: var(--beige-arena);
+        padding: 8rem 0;
+        position: relative;
+        overflow: hidden;
+        background-color: var(--gris-piedra);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-family: var(--font-title);
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+        max-width: 700px;
+        margin: 0 auto 2.5rem auto;
+        opacity: 0.9;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* 6. BUTTONS
+    -------------------------------------------------------------------------------- */
+    .btn {
+        display: inline-block;
+        padding: 1rem 2.8rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        font-size: 1rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .btn-primary {
+        background-color: var(--naranja-terracota);
+        color: white;
+        border-color: var(--naranja-terracota);
+    }
+
+    .btn-primary:hover {
+        background-color: #d46a50;
+        border-color: #d46a50;
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(224, 122, 95, 0.3), 0 5px 10px rgba(0,0,0,0.15);
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: var(--beige-arena);
+        border-color: var(--beige-arena);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--beige-arena);
+        color: var(--gris-piedra);
+        transform: translateY(-4px);
+    }
+
+    .btn-step {
+        background-color: var(--verde-bosque);
+        color: white;
+    }
+
+    .btn-step:hover {
+        background-color: #255a43;
+        transform: scale(1.05);
+    }
+
+    /* 7. HOW IT WORKS & TESTIMONIALS
+    -------------------------------------------------------------------------------- */
+    .steps-grid, .testimonials-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .step-card {
+        background-color: white;
+        padding: 2.5rem 2rem;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(61, 64, 91, 0.1);
+        border-top: 4px solid var(--verde-bosque);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .step-card-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .step-card p {
+        flex-grow: 1;
+        margin-bottom: 2rem;
+    }
+
+    .step-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(61, 64, 91, 0.15);
+    }
+    
+    .step-image {
+        height: 60px;
+        margin-bottom: 1.5rem;
+    }
+
+    .step-title {
+        font-family: var(--font-title);
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .testimonial-card {
+        background-color: var(--beige-arena);
+        padding: 2rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--naranja-terracota);
+        box-shadow: 0 4px 20px rgba(61, 64, 91, 0.05);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .testimonial-card p {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        flex-grow: 1; /* Pushes author to the bottom */
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: auto; /* Pushes itself to the bottom */
+    }
+
+    .testimonial-author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid var(--naranja-terracota);
+    }
+
+    .testimonial-author h4 {
+        font-weight: 700;
+        font-family: var(--font-body);
+    }
+
+    .testimonial-author span {
+        font-size: 0.9rem;
+        color: #6c6f83;
+    }
+
+    .cta-container {
+        text-align: center;
+        margin-top: 4rem;
+    }
+
+    /* 8. FOOTER
+    -------------------------------------------------------------------------------- */
+    .footer {
+        background-color: var(--gris-piedra);
+        color: var(--beige-arena);
+        padding: 4rem 0;
+        text-align: center;
+    }
+
+    .footer .logo-container {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .footer p {
+        margin-bottom: 1.5rem;
+        color: #d1d5db;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .social-links a {
+        color: var(--beige-arena);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+        color: var(--naranja-terracota);
+    }
+
+    .disclaimer {
+        font-size: 0.875rem;
+        max-width: 600px;
+        margin: 2rem auto 0 auto;
+    }
+
+    .disclaimer span {
+        color: #9ca3af;
+        margin-top: 0.5rem;
+        display: block;
+    }
+
+    /* 9. PARTICLES & ANIMATIONS
+    -------------------------------------------------------------------------------- */
+    .particles-canvas {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    .hero-title, .hero-subtitle, .hero-buttons {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+    .hero-subtitle { animation-delay: 0.2s; }
+    .hero-buttons { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 10. RESPONSIVE DESIGN
+    -------------------------------------------------------------------------------- */
+    @media (min-width: 640px) {
+        .hero-buttons {
+            flex-direction: row;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .steps-grid, .testimonials-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .hero-title {
+            font-size: 4rem;
+        }
+        .section-title {
+            font-size: 3rem;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="sticky-header">
+    <nav class="container">
+      <a href="index.html" class="logo-container">
+        <svg class="logo-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+        <span>Trades Ventures</span>
+      </a>
+      
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </label>
+      
+      <ul id="menu" class="main-menu">
+        <li><a href="#home" class="nav-link active">Inicio</a></li>
+        <li><a href="#how-it-works" class="nav-link">¿Cómo Funciona?</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonios</a></li>
+        <li><a href="blog.html" class="nav-link">Estrategias</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <canvas id="hero-particles" class="particles-canvas"></canvas>
+      <div class="container hero-content">
+        <h1 class="hero-title">Copia Mis Trades, Opera Conmigo y Genera Ingresos en Binomo.</h1>
+        <p class="hero-subtitle">Aprende las estrategias que uso, únete a mi comunidad PRIME GRATIS y empieza a construir tu libertad financiera. Solo necesitas registrarte con mi enlace de afiliado.</p>
+        <div class="hero-buttons">
+            <!-- IMPORTANTE: Reemplaza '#' con tu enlace de Binomo -->
+            <a href="#" class="btn btn-primary">Crear Mi Cuenta en Binomo</a>
+            <a href="#how-it-works" class="btn btn-secondary">Ver Cómo Funciona</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section id="how-it-works" class="section-light">
+        <div class="container">
+            <h2 class="section-title">Tu Camino al Éxito en 3 Pasos</h2>
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-card-content">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Binomo_logo.svg/2560px-Binomo_logo.svg.png" alt="Binomo Logo" class="step-image">
+                        <h3 class="step-title">Regístrate en Binomo</h3>
+                        <p>Crea tu cuenta gratis usando nuestro enlace exclusivo para ser elegible para la comunidad PRIME.</p>
+                    </div>
+                    <!-- IMPORTANTE: Reemplaza '#' con tu enlace de Binomo -->
+                    <a href="#" class="btn btn-step">Registrarme Ahora</a>
+                </div>
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-card-content">
+                        <svg class="step-image" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="var(--verde-bosque)"><path d="M42,40.5H6v-27L24,24l18-10.5v27ZM24,21,6,10.5H42Z"/></svg>
+                        <h3 class="step-title">Únete a PRIME Gratis</h3>
+                        <p>Una vez registrado, envíanos tu ID de usuario. Te daremos acceso a nuestro grupo privado con señales y mentoría.</p>
+                    </div>
+                    <a href="https://t.me/your-telegram-contact" target="_blank" class="btn btn-step">Enviar Mi ID</a>
+                </div>
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-card-content">
+                        <svg class="step-image" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="var(--verde-bosque)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9h4v2h-4v-2zm0 4h4v2h-4v-2zm-2-9.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm4 0c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5z" fill="var(--verde-bosque)"/></svg>
+                        <h3 class="step-title">Deposita, Opera y Gana</h3>
+                        <p>Realiza tu primer depósito, opera con nosotros en las sesiones en vivo y empieza a generar ingresos mientras aprendes.</p>
+                    </div>
+                    <a href="#testimonials" class="btn btn-step">Ver Casos de Éxito</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-dark">
+        <div class="container">
+            <h2 class="section-title">¿Qué Dicen Nuestros Miembros PRIME?</h2>
+            <p class="section-subtitle">Resultados reales de personas como tú que decidieron tomar acción.</p>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <p>"Pasé de quemar cuentas a tener mi primera semana rentable. La clave fue entender la gestión de riesgo que explican en la comunidad PRIME. No son solo señales, es educación real."</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/60?img=1" alt="Avatar de Javier Mendoza">
+                        <div>
+                            <h4>Javier Mendoza</h4>
+                            <span>Miembro PRIME desde 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <p>"Lo que más me impactó fue la transparencia. Muestran las operaciones ganadas y también las perdidas, explicando el porqué de cada una. Eso me dio la confianza para depositar y hoy retiré el doble."</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/60?img=5" alt="Avatar de Sofia Valente">
+                        <div>
+                            <h4>Sofia Valente</h4>
+                            <span>Miembro PRIME desde 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <p>"Creía que necesitaba mucho dinero para empezar. Me uní al grupo PRIME, comencé con un depósito pequeño y siguiendo la estrategia, ya he triplicado mi capital en menos de un mes. ¡Increíble!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/60?img=8" alt="Avatar de Ricardo Torres">
+                        <div>
+                            <h4>Ricardo Torres</h4>
+                            <span>Miembro PRIME desde 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-container">
+                <!-- IMPORTANTE: Reemplaza '#' con tu enlace de Binomo -->
+                <a href="#" class="btn btn-primary">Quiero Ser el Próximo Caso de Éxito</a>
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <a href="index.html" class="logo-container">
+        <svg class="logo-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+        <span>Trades Ventures</span>
+      </a>
+      <p>Construyendo la nueva generación de traders rentables.</p>
+      <div class="social-links">
+        <a href="#">TikTok</a>
+        <a href="#">Discord</a>
+        <a href="#">Facebook</a>
+        <a href="#">Telegram</a>
+        <a href="#">YouTube</a>
+      </div>
+      <p class="disclaimer">© 2025 Trades Ventures. Todos los derechos reservados. <br> <span>Aviso de Riesgo: El trading de opciones binarias implica un alto nivel de riesgo y puede no ser adecuado para todos los inversores. No invierta dinero que no pueda permitirse perder.</span></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Este archivo JS ahora es necesario para la animación del menú y el fondo -->
+  <script src="assets/main.js"></script>
+</body>
+</html>
